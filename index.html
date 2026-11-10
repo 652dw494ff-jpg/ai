@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101321">
+  <title>Aura AI — TG a.s.</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body data-theme="dark">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">A</div><div><strong>Aura AI</strong><small>od TG a.s.</small></div></div>
+      <button class="new-chat" id="newChat">＋ Nový chat</button>
+      <div class="side-label">PROJEKT</div>
+      <div class="side-item active">✦ Aura Core 0.1</div>
+      <div class="side-item">☁ Cloud Web 0.1</div>
+      <div class="side-bottom">
+        <div class="side-label">VZHLED</div>
+        <div class="theme-switch">
+          <button data-theme-choice="dark" class="selected">Tmavý</button>
+          <button data-theme-choice="light">Světlý</button>
+        </div>
+        <div class="side-note">Experimentální vlastní AI model. Verze 0.1</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><span class="status-dot"></span><span id="statusText">Aura Core se načítá…</span></div>
+        <button class="icon-button" id="themeToggle" title="Přepnout vzhled">◐</button>
+      </header>
+      <section class="welcome" id="welcome">
+        <div class="hero-mark">A</div>
+        <p class="eyebrow">TG a.s. · VLASTNÍ VÝVOJ</p>
+        <h1>Ahoj, jsem <span>Aura.</span></h1>
+        <p class="intro">První experimentální verze vlastního jazykového modelu TG a.s.</p>
+        <div class="notice">Aura Core 0.1 se učí z malého českého textového souboru. Zatím neumí spolehlivě odpovídat jako ChatGPT — tohle je první stavební kámen.</div>
+        <div class="suggestions">
+          <button class="suggestion">Představ se</button>
+          <button class="suggestion">Co je TG a.s.?</button>
+          <button class="suggestion">Co se chceš naučit?</button>
+        </div>
+      </section>
+      <section class="chat-area" id="chatArea" aria-live="polite"></section>
+      <form class="composer" id="chatForm">
+        <textarea id="messageInput" rows="1" maxlength="1000" placeholder="Napiš zprávu Aurovi…" required></textarea>
+        <button class="send-button" type="submit" aria-label="Odeslat">↑</button>
+        <div class="composer-foot"><span>Enter odešle · Shift + Enter nový řádek</span><span id="engineLabel">Aura Core 0.1</span></div>
+      </form>
+      <footer>Výstupy mohou být náhodné nebo nesmyslné. Aura 0.1 není hotový asistent.</footer>
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
